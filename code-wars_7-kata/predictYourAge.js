@@ -17,3 +17,22 @@ function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
     }
     return Math.floor((Math.sqrt(added))/2)
   }
+
+  //or
+
+  function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
+    let guess = 1
+    let newArray = []
+      console.log(arguments)
+    for (key in arguments){
+      console.log(key)
+       let num = arguments[key] * arguments[key]
+       newArray.push(num)
+       
+    }
+      let numsAdded = newArray.reduce((accumulator, curval) =>{
+      return accumulator + curval
+      } )
+      console.log(numsAdded)
+     return Math.floor(Math.sqrt(numsAdded) / 2)
+    }
